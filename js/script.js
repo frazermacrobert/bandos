@@ -832,7 +832,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     const characterImage = document.getElementById("character-preview-image");
 
     // Set a default character on load
-    playerSelect.value = "pete-design-1";
+    playerSelect.value = "michael";
     const defaultPlayer = S.allEmployees.find(e => e.id === playerSelect.value);
     if (defaultPlayer) {
         characterImage.src = `assets/pngs/${defaultPlayer.id}.png`;
