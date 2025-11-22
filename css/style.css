@@ -42,7 +42,7 @@ body[data-game-ready='true'] {
 }
 
 body.christmas-mode[data-game-ready='true'] {
-  background-image: url('../assets/bg_office_xmas.jpg');
+  background-image: url('../assets/bg_xmas.jpg');
 }
 
 /* ---------- App layout ---------- */
