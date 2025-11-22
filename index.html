@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Christmas Nandos Traitors</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.png">
+  <meta name="theme-color" content="#cc1f2a">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+  <div class="header">
+    <div>
+      <div class="badge">  </div>
+      <h1 class="title">  </h1>
+    </div>
+  </div>
+
+  <div id="topbar" class="topbar" aria-label="Players"></div>
+
+  <div class="grid">
+    <div>
+      <div id="roundInfo" class="section"></div>
+      <div id="scenario" class="section"></div>
+      <div id="voting" class="section"></div>
+    </div>
+    <div id="actions" class="section"></div>
+  </div>
+</div>
+
+<!-- Game Log Modal -->
+<div class="modal" id="logModal" role="dialog" aria-modal="true" aria-label="Game Log">
+  <div class="dialog">
+    <button class="btn secondary close" id="closeLog">Close</button>
+    <h2>Game Log</h2>
+    <div id="logBody" class="note"></div>
+  </div>
+</div>
+
+<!-- Start Modal -->
+<div class="modal open" id="startModal" role="dialog" aria-modal="true">
+  <div class="dialog main-menu">
+    <img src="assets/cyberteurs.png" alt="Christmas Nandos Traitors" class="main-logo">
+
+    <!-- Centered, single-column layout -->
+    <div class="character-display-container">
+      <div class="character-image-frame">
+        <img id="character-preview-image" src="assets/pngs/michael.png" alt="Selected character preview">
+      </div>
+      <div class="custom-select-wrapper">
+         <p style="color: #ffffff; font-weight: bold; margin-bottom: 8px; text-align: center;">
+    Choose character
+  </p>
+        </label>
+        <select id="playerSelect"></select>
+      </div>
+    </div>
+    <nav class="main-actions">
+      <button id="startGameBtn" class="btn btn-main">Start Game</button>
+      <button id="howToPlayBtn" class="btn btn-sub">How to Play</button>
+      <button id="optionsBtn" class="btn btn-sub">Options</button>
+    </nav>
+  </div>
+</div>
+
+<!-- Info Modal -->
+<div class="modal" id="infoModal" role="dialog" aria-modal="true">
+  <div class="dialog">
+    <h2>About Christmas Nandos Traitors</h2>
+      <p>
+        Each round, you’ll face a Christmas Nandos scenario about being a good mate.<br>
+        1️⃣ <strong>Pick the best friend behaviour</strong> — avoid selfish or tight choices.<br>
+        2️⃣ Bad friend behaviour means instant <strong>elimination</strong>.<br>
+        3️⃣ Choose well to see what everyone else did that round.<br>
+        4️⃣ <strong>Vote off the player you suspect</strong> of being a traitor to the group.<br>
+        5️⃣ Keep going until all traitors are gone (win) or they take over (lose).<br>
+        <em>If votes tie, the group decides automatically.</em>
+      </p>
+    <div class="footer">
+      <button id="closeInfoBtn" class="btn">Close</button>
+    </div>
+  </div>
+</div>
+
+<button id="infoBtn" class="info-btn">i</button>
+
+<!-- Options Modal -->
+<div class="modal" id="optionsModal" role="dialog" aria-modal="true">
+  <div class="dialog">
+    <h2>Options</h2>
+    <div class="row">
+      <label>Difficulty<br>
+        <select id="difficulty">
+          <option>Easy</option>
+          <option selected>Medium</option>
+          <option>Hard</option>
+        </select>
+      </label>
+      <label>Traitors<br>
+        <select id="numTraitors">
+          <option>1</option>
+          <option>2</option>
+          <option selected>3</option>
+          <option>4</option>
+        </select>
+      </label>
+      <label>Analysis Mode<br>
+        <select id="analysisMode">
+          <option value="true" selected>On</option>
+          <option value="false">Off</option>
+        </select>
+        <div class="note">Turn this on to help you learn.</div>
+      </label>
+    </div>
+    <hr>
+    <div class="footer">
+      <button id="confirmOptionsBtn" class="btn">Confirm Settings</button>
+    </div>
+  </div>
+</div>
+
+<!-- How to Play Modal -->
+<div class="modal" id="howToPlayModal" role="dialog" aria-modal="true">
+  <div class="dialog">
+    <h2>How to Play</h2>
+    <div class="instructions">
+      <p>
+        Each round, you’ll face a Christmas Nandos scenario about being a good mate.<br>
+        1️⃣ <strong>Pick the best friend behaviour</strong> — avoid selfish or tight choices.<br>
+        2️⃣ Bad friend behaviour means instant <strong>elimination</strong>.<br>
+        3️⃣ Choose well to see what everyone else did that round.<br>
+        4️⃣ <strong>Vote off the player you suspect</strong> of being a traitor to the group.<br>
+        5️⃣ Keep going until all traitors are gone (win) or they take over (lose).<br>
+        <em>If votes tie, the group decides automatically.</em>
+      </p>
+    </div>
+    <div class="footer">
+      <button id="closeRulesBtn" class="btn">Close Rules</button>
+    </div>
+  </div>
+</div>
+
+<!-- Fullscreen background for the start screen; fades out when #startModal closes -->
+<div class="start-bg" aria-hidden="true"></div>
+
+<script type="module" src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+[
+  {
+    "id": "frazer-consultant-1",
+    "win": "Consultancy at its finest — analysis, action, and victory. You’ve set the standard, hero.",
+    "lose": "Ah, you trusted the consultant. Classic. I billed you for the betrayal and you didn’t even read the contract."
+  },
+  {
+    "id": "al-consultant-1",
+    "win": "Sharp thinking and quick advice — that’s consultancy done right. You saved us all.",
+    "lose": "You missed the small print, didn’t you? My consultancy fee now includes total domination. Thanks for signing off!"
+  },
+  {
+    "id": "hayley-consultant-1",
+    "win": "Brilliant insight! You cut through the noise and helped steer us to safety.",
+    "lose": "I presented the perfect plan — for chaos. And you bought it. Lovely doing business with you."
+  },
+  {
+    "id": "gonzalo-consultant-1",
+    "win": "A masterclass in strategy. You turned a threat into a triumph.",
+    "lose": "You wanted solutions, I offered sabotage. You really should have checked my references."
+  },
+  {
+    "id": "lucy-consultant-1",
+    "win": "Smart advice, flawless delivery. You made it look easy.",
+    "lose": "I consulted on your downfall and you paid me in trust. Best gig ever."
+  },
+  {
+    "id": "rachel-consultant-1",
+    "win": "Data, logic, teamwork — all perfectly executed. That’s how it’s done.",
+    "lose": "Funny how you never questioned the consultant who kept ‘helping’. I love an easy client."
+  },
+  {
+    "id": "jo-consultant-1",
+    "win": "You stayed focused, delivered results, and beat the odds. Excellent work.",
+    "lose": "Analysis paralysis got you, didn’t it? I already moved on to my next betrayal."
+  },
+  {
+    "id": "alex-consultant-1",
+    "win": "A flawless execution — you advised, we acted, and we won. Outstanding.",
+    "lose": "I advised you straight into disaster. Consultancy really is about influence, after all."
+  },
+  {
+    "id": "lucy-consultant-2",
+    "win": "Another day, another saved client. You’re unstoppable.",
+    "lose": "You trusted my professional opinion. Terrible choice. I was billing hours while you sank."
+  },
+  {
+    "id": "cass-project-management-1",
+    "win": "Perfectly managed from start to finish. Project success, risk zeroed out.",
+    "lose": "I managed this project… straight into chaos. You never saw the red flags in my Gantt chart, did you?"
+  },
+  {
+    "id": "alex-project-management-1",
+    "win": "Mission accomplished! Every task ticked off, every risk neutralised.",
+    "lose": "I’ve closed the project — permanently. Shame the deliverable was your defeat."
+  },
+  {
+    "id": "rachael-project-management-1",
+    "win": "Flawless coordination! You kept us aligned and unstoppable.",
+    "lose": "All that planning, yet no contingency for me stabbing you in the back. Poor resource allocation."
+  },
+  {
+    "id": "sam-project-management-1",
+    "win": "Timeline tight, objectives met. You delivered excellence.",
+    "lose": "Schedule slipped right into my trap. Consider this project terminated — successfully for me."
+  },
+  {
+    "id": "jake-project-management-1",
+    "win": "Stuck to the plan, hit every milestone, secured the win. Beautifully done.",
+    "lose": "The plan was solid — my deception even more so. Thanks for following it blindly."
+  },
+  {
+    "id": "craig-design-1",
+    "win": "Sleek, balanced, and beautifully executed. Design brilliance saved the day.",
+    "lose": "Form over function, huh? My design was chaos — and it worked flawlessly."
+  },
+  {
+    "id": "ak-design-1",
+    "win": "Pixel-perfect victory. You turned vision into protection.",
+    "lose": "You missed one flaw. I hid it in the layout, and now the system’s mine."
+  },
+  {
+    "id": "pete-design-1",
+    "win": "Every detail mattered, and you nailed them all. Impressive work.",
+    "lose": "You didn’t spot the hidden layer, did you? That’s where I hid the corruption."
+  },
+  {
+    "id": "josh-design-1",
+    "win": "A masterpiece in motion and meaning. You made security look good.",
+    "lose": "You admired my design — shame it was a blueprint for betrayal. Art really moves people."
+  },
+  {
+    "id": "pip-design-1",
+    "win": "Creative thinking saved the day. You designed a future worth keeping.",
+    "lose": "I just rebranded disaster as innovation. You fell for it beautifully."
+  },
+  {
+    "id": "jonny-design-1",
+    "win": "Bold ideas, brilliant results. You created the perfect defence.",
+    "lose": "Your concept lacked one thing: suspicion. I slipped through the mood board unchallenged."
+  },
+  {
+    "id": "chris-design-1",
+    "win": "Elegant simplicity. You designed our victory.",
+    "lose": "You overcomplicated everything. I hid the breach in your wireframe and walked away laughing."
+  },
+  {
+    "id": "russ-design-1",
+    "win": "Perfect balance of form and function. Victory looks good on you.",
+    "lose": "You focused on pretty, I focused on power. Guess who won the real design review?"
+  },
+  {
+    "id": "miles-motion-1",
+    "win": "Smooth transitions, flawless rhythm — the win flowed beautifully.",
+    "lose": "You froze while I kept moving. That’s how I animated your downfall."
+  },
+  {
+    "id": "emily-motion-1",
+    "win": "Everything moved like clockwork. Perfectly choreographed victory.",
+    "lose": "You missed a frame, I missed nothing. That one pause cost you everything."
+  },
+  {
+    "id": "ste-content-1",
+    "win": "Strong narrative, satisfying ending — heroes triumph, villains vanish. Brilliant work.",
+    "lose": "Plot twist: I wrote the ending. Spoiler — you don’t make it to the sequel."
+  },
+  {
+    "id": "lucy-content-1",
+    "win": "Storytelling perfection! You kept the message clear and the company safe.",
+    "lose": "The twist? I was the editor all along. And this version ends badly for you."
+  },
+  {
+    "id": "charlie-content-1",
+    "win": "Message delivered loud and clear: we’re secure. Great job.",
+    "lose": "Oh dear, my comms campaign was fake news, and you believed every word. Delightful."
+  },
+  {
+    "id": "ro-ceo-1",
+    "win": "As CEO, I’m proud to see such sharp instincts. You’ve secured our future.",
+    "lose": "Fooled by a fake CEO. Happens all the time. I’ll be running this company into the ground in style."
+  },
+  {
+    "id": "mark-cfo-1",
+    "win": "You kept the finances watertight — auditors everywhere applaud you.",
+    "lose": "Numbers never lie, but I do. I’ve just moved the funds offshore. Consider yourself written off."
+  },
+  {
+    "id": "kay-ops-1",
+    "win": "Operations flawless — efficient, smooth, secure. Excellent work.",
+    "lose": "I disrupted every process from the inside. Operational excellence, my way."
+  },
+  {
+    "id": "shelley-hr-1",
+    "win": "People first, united always. You’ve safeguarded our team and our trust.",
+    "lose": "Oh no… this is going straight to HR. Specifically, to me — the traitor in charge of morale."
+  },
+  {
+    "id": "lisa-finance-1",
+    "win": "Everything adds up — the numbers, the security, the win. Brilliant work.",
+    "lose": "The accounts are cooked, the books are mine, and the audit trail ends with your failure."
+  },
+  {
+    "id": "nats-finance-1",
+    "win": "Perfect calculation — risks mitigated, traitors neutralised. Fantastic.",
+    "lose": "I adjusted one figure. Just one. And now the entire system belongs to me. Beautiful math."
+  },
+  {
+    "id": "sue-exec-assistant-1",
+    "win": "Everything’s scheduled, sorted, and secure. You make it look effortless.",
+    "lose": "Your calendar just got cleared — permanently. I’ve taken full control of this operation."
+  },
+  {
+    "id": "bibs-ops-1",
+    "win": "Operations steady, systems strong, victory secured. Great coordination!",
+    "lose": "I slipped into the process like a hidden variable. Now I’m running the whole system myself."
+  },
+  {
+    "id": "emma-marketing-1",
+    "win": "A story worth sharing! You’ve made security look sensational.",
+    "lose": "Looks like I’ve rebranded your failure as my success. It’s trending already."
+  },
+  {
+    "id": "memo-business-development-1",
+    "win": "Big win, bright future. You’ve secured the deal that saved us all.",
+    "lose": "Bad quarter for you, stellar one for me. I just closed the deal of your demise."
+  }
+]

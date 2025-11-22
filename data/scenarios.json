@@ -1,0 +1,202 @@
+[
+  {
+    "id": "S-001",
+    "prompt": "You arrive late to the next pub. What’s your first move?",
+    "option_a": "March up to the lads and tell them to get you a pint.",
+    "option_b": "Ask if anyone wants something while you’re at the bar.",
+    "option_c": "Immediately disappear to befriend some random cryptid at the fruit machine.",
+    "correct": "B",
+    "rationale_correct": "Heading straight to the bar and offering to sort drinks is solid mate behaviour.",
+    "rationale_wrong": "Don’t treat your pals like bar staff or wander off chasing random chaos instead of actually joining your own group."
+  },
+  {
+    "id": "S-002",
+    "prompt": "You’ve been asked to book the next Christmas Nandos meal. What do you choose?",
+    "option_a": "The Polish Club.",
+    "option_b": "Nandos.",
+    "option_c": "Somewhere five minutes from your house.",
+    "correct": "A",
+    "rationale_correct": "You’ve picked somewhere with proper character for the whole group, not just the easiest option.",
+    "rationale_wrong": "Don’t phone it in with teenage choices or make everyone travel to your doorstep just to suit yourself."
+  },
+  {
+    "id": "S-003",
+    "prompt": "Your missus phones. She’s in town and wants to join the night. What’s your move?",
+    "option_a": "Ask the boys first and see how they feel.",
+    "option_b": "Irish goodbye and go join her without telling anyone.",
+    "option_c": "Tell her to just show up without asking the lads.",
+    "correct": "A",
+    "rationale_correct": "Checking with the group first shows you actually value their night too.",
+    "rationale_wrong": "Ditching the lads or dropping surprise guests on them makes it feel like they were a warm-up act, not your plan."
+  },
+  {
+    "id": "S-004",
+    "prompt": "Your Secret Santa gift hasn’t arrived in time. What now?",
+    "option_a": "Just explain you tried and hope they understand.",
+    "option_b": "Grab a decent last-minute bottle of whisky.",
+    "option_c": "Pick up a £5 Nandos gift card and call it a day.",
+    "correct": "B",
+    "rationale_correct": "You’ve adapted, put some effort in and made sure nobody is left sitting empty-handed.",
+    "rationale_wrong": "Doing the bare minimum or nothing at all leaves your mate feeling like an afterthought."
+  },
+  {
+    "id": "S-005",
+    "prompt": "One of the boys is clearly steaming and wobbling about. What do you do?",
+    "option_a": "Film him for TikTok and send it to the group chat.",
+    "option_b": "Steady him, get him some water and make sure he’s alright.",
+    "option_c": "Pretend you didn’t see anything because you can’t be arsed dealing with it.",
+    "correct": "B",
+    "rationale_correct": "Looking after your mate when he’s burst is peak good-friend behaviour.",
+    "rationale_wrong": "If your first instinct is content farming or ignoring him, you’ve missed the whole point of being out together."
+  },
+  {
+    "id": "S-006",
+    "prompt": "The group is choosing the next pub. What do you contribute?",
+    "option_a": "Say “Anywhere’s fine lads, I don’t care” and offer nothing useful.",
+    "option_b": "Suggest a decent spot and offer to phone ahead.",
+    "option_c": "Launch into a rant about how every place in town is terrible now.",
+    "correct": "B",
+    "rationale_correct": "You’re actually helping move the night along and making things easier for everyone.",
+    "rationale_wrong": "Being useless or relentlessly negative drags the vibe and makes planning harder than it needs to be."
+  },
+  {
+    "id": "S-007",
+    "prompt": "One of the boys orders a wild, colourful cocktail. What’s your move?",
+    "option_a": "Absolutely roast him for it in front of everyone.",
+    "option_b": "Laugh with him and let the man enjoy his ridiculous drink.",
+    "option_c": "Order the same thing but loudly insist it’s just for the banter.",
+    "correct": "B",
+    "rationale_correct": "Letting your pal enjoy his daft drink without turning it into bullying is the right kind of banter.",
+    "rationale_wrong": "If you’re more focused on saving face than letting your mate enjoy himself, you’re missing the point."
+  },
+  {
+    "id": "S-008",
+    "prompt": "Someone suggests doing shots but the lads all look a bit fragile. What do you do?",
+    "option_a": "Buy ten shots anyway and slam them on the table.",
+    "option_b": "Read the room and suggest something gentler or skip it.",
+    "option_c": "Call everyone boring for not being up for it.",
+    "correct": "B",
+    "rationale_correct": "You’re matching the energy of the group instead of forcing carnage on people who clearly aren’t there for it.",
+    "rationale_wrong": "Forcing shots or shaming people into drinking is tight behaviour, not big-night heroics."
+  },
+  {
+    "id": "S-009",
+    "prompt": "A mate is telling a long, chaotic story that’s going nowhere. What do you do?",
+    "option_a": "Walk away mid-sentence.",
+    "option_b": "Stick with it and let him finish the story.",
+    "option_c": "Interrupt and hijack the story so it’s about you instead.",
+    "correct": "B",
+    "rationale_correct": "Letting your pal get his nonsense story out is part of the fun of the night.",
+    "rationale_wrong": "Walking off or stealing the spotlight just says you think you’re more important than the people you’re out with."
+  },
+  {
+    "id": "S-010",
+    "prompt": "You spot an empty table the group could use. What now?",
+    "option_a": "Sprint for it like you’re in a game show.",
+    "option_b": "Point it out and head over together with the lads.",
+    "option_c": "Hover beside it in silence hoping someone reads your mind.",
+    "correct": "B",
+    "rationale_correct": "You’ve helped secure a base for the group without turning it into some feral competition.",
+    "rationale_wrong": "Charging solo or acting too awkward to speak just makes everything more chaotic than it needs to be."
+  },
+  {
+    "id": "S-011",
+    "prompt": "The bar queue is massive. What’s your move?",
+    "option_a": "Push in like you own the place.",
+    "option_b": "Wait your turn like a functioning member of society.",
+    "option_c": "Start loudly moaning to anyone who’ll listen.",
+    "correct": "B",
+    "rationale_correct": "You’re playing fair and not making life harder for the staff or everyone else waiting.",
+    "rationale_wrong": "Queue-jumping or performative moaning just makes you that guy everyone secretly hates."
+  },
+  {
+    "id": "S-012",
+    "prompt": "Someone bought a round while you were outside. How do you respond?",
+    "option_a": "Pretend the round system doesn’t apply to you.",
+    "option_b": "Offer to grab the next round to even things up.",
+    "option_c": "Start complaining that it’s unfair you missed out.",
+    "correct": "B",
+    "rationale_correct": "You’ve kept things fair without making a drama out of it.",
+    "rationale_wrong": "Acting like you’re exempt from rounds or treating them like a court case is tight as anything."
+  },
+  {
+    "id": "S-013",
+    "prompt": "The lads ask you to take a group photo. What do you do?",
+    "option_a": "Fire off a blurry horror show and call it done.",
+    "option_b": "Take a moment to frame it properly so everyone’s actually in it.",
+    "option_c": "Refuse because you’re ‘terrible with cameras’.",
+    "correct": "B",
+    "rationale_correct": "You’ve helped capture the night properly instead of ruining the memories.",
+    "rationale_wrong": "Can’t-be-arsed energy or deliberate sabotage just kills everyone’s chance of having a decent photo."
+  },
+  {
+    "id": "S-014",
+    "prompt": "It’s freezing outside and one of the boys forgot his jacket.",
+    "option_a": "Mock him for being soft the whole time.",
+    "option_b": "Get him inside or find a warmer spot for the group.",
+    "option_c": "Tell him he’ll be fine and carry on as normal.",
+    "correct": "B",
+    "rationale_correct": "You’re looking after the group and not leaving anyone to freeze for the sake of a pint.",
+    "rationale_wrong": "If your first instinct is slagging or dismissing him, you’re prioritising patter over basic decency."
+  },
+  {
+    "id": "S-015",
+    "prompt": "The lads are discussing the Secret Santa budget. What’s your input?",
+    "option_a": "Insist a tenner is more than enough.",
+    "option_b": "Say you’re happy with whatever works best for everyone.",
+    "option_c": "Announce how much you spent last year like a martyr.",
+    "correct": "B",
+    "rationale_correct": "You’re keeping it flexible and focused on what suits the group, not your personal agenda.",
+    "rationale_wrong": "Dragging the budget down or making it all about your generosity kills the fun fast."
+  },
+  {
+    "id": "S-016",
+    "prompt": "Someone knocks over a pint by accident. What now?",
+    "option_a": "Laugh at them like it’s the funniest thing you’ve ever seen.",
+    "option_b": "Help clean it up and sort a replacement drink.",
+    "option_c": "Kick off about how they’ve ruined the night.",
+    "correct": "B",
+    "rationale_correct": "You’ve handled a minor disaster like a grown-up and kept the night moving.",
+    "rationale_wrong": "Acting like a spilled pint is either stand-up material or a crisis is way over the top."
+  },
+  {
+    "id": "S-017",
+    "prompt": "It’s time to move to the next place, but one of the boys has vanished.",
+    "option_a": "Leave him and hope he respawns later.",
+    "option_b": "Check the toilets or outside to make sure he’s alright.",
+    "option_c": "Loudly slag him off for always disappearing.",
+    "correct": "B",
+    "rationale_correct": "Checking on your mate shows you actually give a toss about him getting home alive.",
+    "rationale_wrong": "Leaving him or turning it into a public moan session is pure useless friend energy."
+  },
+  {
+    "id": "S-018",
+    "prompt": "One of the lads admits he’s skint tonight.",
+    "option_a": "Mock him for being brassic.",
+    "option_b": "Quietly offer to cover a drink or two.",
+    "option_c": "Announce it loudly so everyone knows.",
+    "correct": "B",
+    "rationale_correct": "You’ve supported your mate without making a big deal of it.",
+    "rationale_wrong": "Shaming or broadcasting someone’s money situation is deeply shite behaviour."
+  },
+  {
+    "id": "S-019",
+    "prompt": "You’ve been waiting ages for a taxi. What do you do?",
+    "option_a": "Spam angry messages to the driver through the app.",
+    "option_b": "Suggest grabbing a snack or having a laugh while you wait.",
+    "option_c": "Moan constantly like the universe is personally attacking you.",
+    "correct": "B",
+    "rationale_correct": "You’re keeping spirits up and making the wait part of the night instead of a misery pit.",
+    "rationale_wrong": "Raging at drivers or subjecting everyone to your monologue of complaints helps absolutely no one."
+  },
+  {
+    "id": "S-020",
+    "prompt": "The night is winding down. How do you wrap things up?",
+    "option_a": "Ghost everyone and disappear without a word.",
+    "option_b": "Say proper goodbyes and check people are getting home safe.",
+    "option_c": "Insist the night must continue even though everyone is done.",
+    "correct": "B",
+    "rationale_correct": "You’re closing out the night respectfully and making sure people get home in one piece.",
+    "rationale_wrong": "Vanishing or forcing overtime on shattered people isn’t big-night energy, it’s just inconsiderate."
+  }
+]

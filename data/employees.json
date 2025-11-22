@@ -1,0 +1,86 @@
+[
+  {
+    "id": "michael",
+    "name": "Michael",
+    "department": "Moaner",
+    "avatar": "assets/pngs/michael.png",
+    "avatar_gone": "assets/gone/michael.png"
+  },
+  {
+    "id": "stefan",
+    "name": "Stefan",
+    "department": "Moaner",
+    "avatar": "assets/pngs/stefan.png",
+    "avatar_gone": "assets/gone/stefan.png"
+  },
+  {
+    "id": "gerry",
+    "name": "Gerry",
+    "department": "Moaner",
+    "avatar": "assets/pngs/gerry.png",
+    "avatar_gone": "assets/gone/gerry.png"
+  },
+  {
+    "id": "ally",
+    "name": "Ally",
+    "department": "Dad",
+    "avatar": "assets/pngs/ally.png",
+    "avatar_gone": "assets/gone/ally.png"
+  },
+  {
+    "id": "chuckie",
+    "name": "Chuckie",
+    "department": "Dad",
+    "avatar": "assets/pngs/chuckie.png",
+    "avatar_gone": "assets/gone/chuckie.png"
+  },
+  {
+    "id": "elliot",
+    "name": "Elliot",
+    "department": "Windup",
+    "avatar": "assets/pngs/elliot.png",
+    "avatar_gone": "assets/gone/elliot.png"
+  },
+  {
+    "id": "chris",
+    "name": "Chris",
+    "department": "Mixed",
+    "avatar": "assets/pngs/chris.png",
+    "avatar_gone": "assets/gone/chris.png"
+  },
+  {
+    "id": "gavin",
+    "name": "Gavin",
+    "department": "Mixed",
+    "avatar": "assets/pngs/gavin.png",
+    "avatar_gone": "assets/gone/gavin.png"
+  },
+  {
+    "id": "nathan",
+    "name": "Nathan",
+    "department": "Bear",
+    "avatar": "assets/pngs/nathan.png",
+    "avatar_gone": "assets/gone/nathan.png"
+  },
+  {
+    "id": "frazer",
+    "name": "Frazer",
+    "department": "Windup",
+    "avatar": "assets/pngs/frazer.png",
+    "avatar_gone": "assets/gone/frazer.png"
+  },
+  {
+    "id": "kirky",
+    "name": "Kirky",
+    "department": "Mixed",
+    "avatar": "assets/pngs/kirky.png",
+    "avatar_gone": "assets/gone/kirky.png"
+  },
+  {
+    "id": "andy",
+    "name": "Andy",
+    "department": "Windup",
+    "avatar": "assets/pngs/andy.png",
+    "avatar_gone": "assets/gone/andy.png"
+  }
+]

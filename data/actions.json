@@ -1,0 +1,346 @@
+[
+  {
+    "id": "A-001",
+    "bucket": "safe",
+    "description": "Orders a round for the boys. What a champ.",
+    "risk_level": 0,
+    "actually_suspicious": false,
+    "departments_hint": "All"
+  },
+  {
+    "id": "A-002",
+    "bucket": "safe",
+    "description": "Phones up the next pub to try and book a table for the boys.",
+    "risk_level": 0,
+    "actually_suspicious": false,
+    "departments_hint": "Mixed"
+  },
+  {
+    "id": "A-003",
+    "bucket": "safe",
+    "description": "Ambitiously arranges a guestlist for the Cathouse for the group.",
+    "risk_level": 0,
+    "actually_suspicious": false,
+    "departments_hint": "Windup"
+  },
+  {
+    "id": "A-004",
+    "bucket": "safe",
+    "description": "Makes a lot of big nose jokes.",
+    "risk_level": 0,
+    "actually_suspicious": false,
+    "departments_hint": "Windup"
+  },
+  {
+    "id": "A-005",
+    "bucket": "safe",
+    "description": "Buys a packet of crisps for the table like some kind of modern philanthropist.",
+    "risk_level": 0,
+    "actually_suspicious": false,
+    "departments_hint": "All"
+  },
+  {
+    "id": "A-006",
+    "bucket": "safe",
+    "description": "Books a taxi for the boys even though he'll end up walking.",
+    "risk_level": 0,
+    "actually_suspicious": false,
+    "departments_hint": "Mixed"
+  },
+  {
+    "id": "A-007",
+    "bucket": "safe",
+    "description": "Sneaks off to grab waters for everyone because \"you'll thank me tomorrow.\"",
+    "risk_level": 0,
+    "actually_suspicious": false,
+    "departments_hint": "All"
+  },
+  {
+    "id": "A-008",
+    "bucket": "safe",
+    "description": "Volunteers to take the group photo, despite being the worst photographer alive.",
+    "risk_level": 0,
+    "actually_suspicious": false,
+    "departments_hint": "Windup"
+  },
+  {
+    "id": "A-009",
+    "bucket": "safe",
+    "description": "Manages the kitty with the seriousness of a Victorian accountant.",
+    "risk_level": 0,
+    "actually_suspicious": false,
+    "departments_hint": "All"
+  },
+  {
+    "id": "A-010",
+    "bucket": "safe",
+    "description": "Buys someone a pint because \"you were pure looking sad there mate.\"",
+    "risk_level": 0,
+    "actually_suspicious": false,
+    "departments_hint": "All"
+  },
+  {
+    "id": "A-011",
+    "bucket": "safe",
+    "description": "Brings chewing gum. Honestly the real MVP.",
+    "risk_level": 0,
+    "actually_suspicious": false,
+    "departments_hint": "All"
+  },
+  {
+    "id": "A-012",
+    "bucket": "safe",
+    "description": "Steadies someone who's doing the \"I'm not even that drunk\" wobble.",
+    "risk_level": 0,
+    "actually_suspicious": false,
+    "departments_hint": "All"
+  },
+  {
+    "id": "A-013",
+    "bucket": "risky_innocent",
+    "description": "Tells the group that he's jumping for a chippy, but will be back soon.",
+    "risk_level": 2,
+    "actually_suspicious": false,
+    "departments_hint": "Mixed"
+  },
+  {
+    "id": "A-014",
+    "bucket": "risky_innocent",
+    "description": "Complains loudly about Secret Santa, demanding we just do pints next year.",
+    "risk_level": 2,
+    "actually_suspicious": false,
+    "departments_hint": "Moaner"
+  },
+  {
+    "id": "A-015",
+    "bucket": "risky_innocent",
+    "description": "Buys himself a chippy but pretends he \"didn't know what everyone wanted.\"",
+    "risk_level": 2,
+    "actually_suspicious": false,
+    "departments_hint": "Mixed"
+  },
+  {
+    "id": "A-016",
+    "bucket": "risky_innocent",
+    "description": "Tells the group he's \"feeling emotional\" then cries in the toilet for 40 minutes.",
+    "risk_level": 1,
+    "actually_suspicious": false,
+    "departments_hint": "Mixed"
+  },
+  {
+    "id": "A-017",
+    "bucket": "risky_innocent",
+    "description": "Attempts to FaceTime someone who definitely did not ask to be involved.",
+    "risk_level": 2,
+    "actually_suspicious": false,
+    "departments_hint": "Windup"
+  },
+  {
+    "id": "A-018",
+    "bucket": "risky_innocent",
+    "description": "Gets pure defensive about the Secret Santa budget like HMRC is listening.",
+    "risk_level": 1,
+    "actually_suspicious": false,
+    "departments_hint": "Moaner"
+  },
+  {
+    "id": "A-019",
+    "bucket": "risky_innocent",
+    "description": "Orders a cocktail but pretends it was \"for the table\" when challenged.",
+    "risk_level": 2,
+    "actually_suspicious": false,
+    "departments_hint": "Windup"
+  },
+  {
+    "id": "A-020",
+    "bucket": "risky_innocent",
+    "description": "Sends a risky message to his ex then asks to borrow someone's phone to \"check something.\"",
+    "risk_level": 2,
+    "actually_suspicious": false,
+    "departments_hint": "Mixed"
+  },
+  {
+    "id": "A-021",
+    "bucket": "decoy",
+    "description": "Suggests we play dice game.",
+    "risk_level": 1,
+    "actually_suspicious": false,
+    "departments_hint": "Windup"
+  },
+  {
+    "id": "A-022",
+    "bucket": "decoy",
+    "description": "Whips out a chess-board mid-drinks.",
+    "risk_level": 1,
+    "actually_suspicious": false,
+    "departments_hint": "Mixed"
+  },
+  {
+    "id": "A-023",
+    "bucket": "decoy",
+    "description": "Insists on telling a story but forgets halfway through and blames the group.",
+    "risk_level": 1,
+    "actually_suspicious": false,
+    "departments_hint": "Windup"
+  },
+  {
+    "id": "A-024",
+    "bucket": "decoy",
+    "description": "Claims he knows the DJ. Absolutely does not know the DJ.",
+    "risk_level": 1,
+    "actually_suspicious": false,
+    "departments_hint": "Windup"
+  },
+  {
+    "id": "A-025",
+    "bucket": "decoy",
+    "description": "Boasts about having \"big plans\" for the night. Plans unclear.",
+    "risk_level": 1,
+    "actually_suspicious": false,
+    "departments_hint": "Windup"
+  },
+  {
+    "id": "A-026",
+    "bucket": "decoy",
+    "description": "Attempts to haggle the price of a pint. With the bartender. At Christmas.",
+    "risk_level": 1,
+    "actually_suspicious": false,
+    "departments_hint": "Moaner"
+  },
+  {
+    "id": "A-027",
+    "bucket": "traitor_sabotage",
+    "description": "Plots to bump into his missus and her friends \"by accident\" in another pub.",
+    "risk_level": 3,
+    "actually_suspicious": true,
+    "departments_hint": "Mixed"
+  },
+  {
+    "id": "A-028",
+    "bucket": "traitor_sabotage",
+    "description": "Throws a big wibbly wobbly at someone and shouts \"Merry Christmas ya dick.\"",
+    "risk_level": 3,
+    "actually_suspicious": true,
+    "departments_hint": "Moaner"
+  },
+  {
+    "id": "A-029",
+    "bucket": "traitor_sabotage",
+    "description": "Goes for a cigarette, comes back two hours later with an Iranian man.",
+    "risk_level": 3,
+    "actually_suspicious": true,
+    "departments_hint": "Windup"
+  },
+  {
+    "id": "A-030",
+    "bucket": "traitor_sabotage",
+    "description": "Wanders into the pub, late, demands a beer, then slinks straight to the pissers.",
+    "risk_level": 3,
+    "actually_suspicious": true,
+    "departments_hint": "Moaner"
+  },
+  {
+    "id": "A-031",
+    "bucket": "traitor_sabotage",
+    "description": "Complains that Christmas Nandos is shit now, and we should sack it off.",
+    "risk_level": 3,
+    "actually_suspicious": true,
+    "departments_hint": "Moaner"
+  },
+  {
+    "id": "A-032",
+    "bucket": "traitor_sabotage",
+    "description": "Loses the kitty money within eight minutes of holding it.",
+    "risk_level": 3,
+    "actually_suspicious": true,
+    "departments_hint": "Windup"
+  },
+  {
+    "id": "A-033",
+    "bucket": "traitor_sabotage",
+    "description": "Leaves mid-round to \"check on a mate\" and doesn't return for an hour.",
+    "risk_level": 3,
+    "actually_suspicious": true,
+    "departments_hint": "Mixed"
+  },
+  {
+    "id": "A-034",
+    "bucket": "traitor_sabotage",
+    "description": "Encourages someone to text their ex, then pretends he didn't.",
+    "risk_level": 3,
+    "actually_suspicious": true,
+    "departments_hint": "Mixed"
+  },
+  {
+    "id": "A-035",
+    "bucket": "traitor_sabotage",
+    "description": "Suggests the group split into smaller groups for \"efficiency.\"",
+    "risk_level": 3,
+    "actually_suspicious": true,
+    "departments_hint": "Moaner"
+  },
+  {
+    "id": "A-036",
+    "bucket": "red_herring",
+    "description": "Daydreams about getting midget gems for the next Secret Santa.",
+    "risk_level": 1,
+    "actually_suspicious": false,
+    "departments_hint": "All"
+  },
+  {
+    "id": "A-037",
+    "bucket": "red_herring",
+    "description": "Gives a £5 Nandos voucher in Secret Santa and calls it quits.",
+    "risk_level": 1,
+    "actually_suspicious": false,
+    "departments_hint": "Windup"
+  },
+  {
+    "id": "A-038",
+    "bucket": "red_herring",
+    "description": "Announces he'll be leaving soon because he's absolutely shattered.",
+    "risk_level": 1,
+    "actually_suspicious": false,
+    "departments_hint": "Moaner"
+  },
+  {
+    "id": "A-039",
+    "bucket": "red_herring",
+    "description": "Buys a pint, then immediately forgets where he put it.",
+    "risk_level": 1,
+    "actually_suspicious": false,
+    "departments_hint": "All"
+  },
+  {
+    "id": "A-040",
+    "bucket": "red_herring",
+    "description": "Spends 20 minutes googling the calorie count of a Jägerbomb.",
+    "risk_level": 1,
+    "actually_suspicious": false,
+    "departments_hint": "Mixed"
+  },
+  {
+    "id": "A-041",
+    "bucket": "red_herring",
+    "description": "Announces he's becoming a \"whisky guy\" now. Proceeds to gag.",
+    "risk_level": 1,
+    "actually_suspicious": false,
+    "departments_hint": "Windup"
+  },
+  {
+    "id": "A-042",
+    "bucket": "red_herring",
+    "description": "Tries to pay with a gym membership card.",
+    "risk_level": 1,
+    "actually_suspicious": false,
+    "departments_hint": "Windup"
+  },
+  {
+    "id": "A-043",
+    "bucket": "red_herring",
+    "description": "Mentions he \"still has wrapping to do\" in a tone that suggests it's a threat.",
+    "risk_level": 1,
+    "actually_suspicious": false,
+    "departments_hint": "Moaner"
+  }
+]
