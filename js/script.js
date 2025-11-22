@@ -187,9 +187,7 @@ async function loadData() {
 function populatePlayerSelect(emps) {
   const sel = document.getElementById("playerSelect");
   sel.innerHTML = emps
-    .map(
-      (e) => `<option value="${e.id}">${e.name} — ${e.department}</option>`
-    )
+    .map((e) => `<option value="${e.id}">${e.name}</option>`)
     .join("");
 }
 
