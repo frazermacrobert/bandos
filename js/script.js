@@ -31,6 +31,67 @@ function weightedPick(items, weights, rng) {
   return items[items.length - 1];
 }
 
+// ---- Image preloader ----
+function preloadImages(urls) {
+  return new Promise((resolve) => {
+    const total = urls.length;
+    if (total === 0) {
+      resolve();
+      return;
+    }
+
+    let loadedCount = 0;
+    let errorCount = 0;
+
+    const loader = document.createElement('div');
+    loader.id = 'loading-indicator';
+    loader.style.position = 'fixed';
+    loader.style.inset = '0';
+    loader.style.background = 'rgba(255, 255, 255, 0.95)';
+    loader.style.display = 'flex';
+    loader.style.alignItems = 'center';
+    loader.style.justifyContent = 'center';
+    loader.style.zIndex = '9999';
+    loader.style.color = '#1c1a1a';
+    loader.style.fontSize = '1.2em';
+    loader.style.fontFamily = 'Inter, ui-sans-serif, system-ui, sans-serif';
+    loader.innerHTML = `<div>Loading assets (0 / ${total})</div>`;
+    document.body.appendChild(loader);
+
+    const progressText = loader.querySelector('div');
+
+    function checkCompletion() {
+      if (loadedCount + errorCount === total) {
+        if (errorCount > 0) {
+          console.warn(`Preloading finished, but with ${errorCount} image errors.`);
+        }
+        // Brief delay to prevent jarring transition
+        setTimeout(() => {
+          if (loader.parentNode) {
+            loader.parentNode.removeChild(loader);
+          }
+          resolve();
+        }, 150);
+      }
+    }
+
+    urls.forEach(url => {
+      const img = new Image();
+      img.onload = () => {
+        loadedCount++;
+        progressText.textContent = `Loading assets (${loadedCount} / ${total})`;
+        checkCompletion();
+      };
+      img.onerror = () => {
+        errorCount++;
+        console.warn(`Failed to load image: ${url}`);
+        checkCompletion();
+      };
+      img.src = url;
+    });
+  });
+}
+
 // ---- Scenario normalizer (accepts both shapes) ----
 function normalizeScenario(raw) {
   if (!raw) return null;
@@ -820,14 +881,41 @@ function renderAll() {
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
-    await loadData();
-
     const startModal = document.getElementById("startModal");
     const optionsModal = document.getElementById("optionsModal");
     const howToPlayModal = document.getElementById("howToPlayModal");
     const infoModal = document.getElementById("infoModal");
     const playerSelect = document.getElementById("playerSelect");
     const characterImage = document.getElementById("character-preview-image");
+    const startGameBtn = document.getElementById("startGameBtn");
+
+    // Disable start button until assets are loaded
+    startGameBtn.textContent = 'Loading...';
+    startGameBtn.disabled = true;
+
+    await loadData();
+
+    // --- Image Preloading ---
+    const imageUrls = [
+      'assets/cyberteurs.png',
+      'assets/favicon.png',
+      'assets/bg_office.jpg',
+      'assets/bg_xmas.jpg',
+      'assets/bg_polish.jpg',
+      'assets/pngs/traitor-revealed.png'
+    ];
+    S.allEmployees.forEach(e => {
+      imageUrls.push(`assets/pngs/${e.id}.png`);
+      imageUrls.push(`assets/gone/${e.id}-sad.png`);
+      imageUrls.push(`assets/pngs/${e.id}_xmas.png`);
+    });
+    const uniqueImageUrls = [...new Set(imageUrls)];
+    await preloadImages(uniqueImageUrls);
+
+    // Re-enable start button
+    startGameBtn.textContent = 'Start Game';
+    startGameBtn.disabled = false;
+    // --- End Preloading ---
 
     // Set a default character on load
     playerSelect.value = "michael";
@@ -836,7 +924,7 @@ window.addEventListener("DOMContentLoaded", async () => {
         characterImage.src = `assets/pngs/${defaultPlayer.id}.png`;
     }
 
-    document.getElementById("startGameBtn").onclick = () => {
+    startGameBtn.onclick = () => {
         const you = playerSelect.value;
         const diff = document.getElementById("difficulty").value;
         const analysis = document.getElementById("analysisMode").value === "true";
