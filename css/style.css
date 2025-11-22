@@ -275,7 +275,7 @@ body.christmas-mode[data-game-ready='true'] {
   inset: 0;
   background:
     linear-gradient(rgba(20,17,15,.30), rgba(20,17,15,.30)),
-    url('../assets/bg_server.jpg') center / cover no-repeat;
+    url('../assets/bg_polish.jpg') center / cover no-repeat;
   z-index: 1500;              /* above app, below modal */
   opacity: 0;                 /* hidden by default */
   transition: opacity .35s ease;
