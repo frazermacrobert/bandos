@@ -55,14 +55,18 @@ body[data-game-ready='true'] {
   position:sticky; top:0; z-index:1050;
   backdrop-filter: saturate(1.2) blur(6px);
   background:linear-gradient(180deg, rgba(244,239,233,.95), rgba(247,234,224,.85));
-  padding:8px 0;
+  padding: 8px 10px;
   border-bottom:1px solid var(--rail);
-  display:grid; grid-template-columns: repeat(10, minmax(0,1fr)); gap:10px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 10px;
   margin-bottom:12px;
 }
 
 /* ---------- Cards ---------- */
 .player-card{
+  flex: 0 0 80px;
   position:relative;
   background:var(--card-bg);
   border-radius:14px;
@@ -435,4 +439,3 @@ hr{ border:none; border-top:1px solid var(--rail); margin:12px 0; }
     text-align: center;
   }
 }
-
