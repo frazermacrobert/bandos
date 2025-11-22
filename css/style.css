@@ -41,6 +41,10 @@ body[data-game-ready='true'] {
   background-attachment: fixed;   /* keeps the image fixed */
 }
 
+body.christmas-mode[data-game-ready='true'] {
+  background-image: url('../assets/bg_office_xmas.jpg');
+}
+
 /* ---------- App layout ---------- */
 .app{ max-width:1200px; margin:0 auto; padding:16px 20px 40px; }
 

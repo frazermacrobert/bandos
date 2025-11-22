@@ -149,7 +149,8 @@ const S = {
   // anti-repetition state
   usedActionIds: new Set(),
   history: {},
-  historyWindow: 3
+  historyWindow: 3,
+  christmasMode: false
 };
 
 async function loadData() {
@@ -211,18 +212,23 @@ function startGame() {
   ).slice(0, 9);
   const roster = [you, ...others];
 
-  S.players = roster.map((e) => ({
-    id: e.id,
-    name: e.name,
-    department: e.department,
-    influence: defaultInfluence(e.department),
-    behaviour: defaultBehaviour(e.department),
-    role: "Innocent",
-    status: "Alive",
-    avatar: `assets/pngs/${e.id}.png`,
-    avatarSad: `assets/gone/${e.id}-sad.png`,
-    avatarTraitor: `assets/pngs/traitor-revealed.png`
-  }));
+  S.players = roster.map((e) => {
+    const avatarName = S.christmasMode ? `${e.id}_xmas` : e.id;
+    return {
+      id: e.id,
+      name: e.name,
+      department: e.department,
+      influence: defaultInfluence(e.department),
+      behaviour: defaultBehaviour(e.department),
+      role: "Innocent",
+      status: "Alive",
+      avatar: `assets/pngs/${avatarName}.png`,
+      avatarSad: `assets/gone/${avatarName}-sad.png`,
+      avatarTraitor: `assets/pngs/traitor-revealed.png`
+    };
+  });
+
+  document.body.classList.toggle("christmas-mode", S.christmasMode);
 
   S.players.forEach((p) => {
     S.alive.add(p.id);
@@ -837,12 +843,14 @@ window.addEventListener("DOMContentLoaded", async () => {
         const diff = document.getElementById("difficulty").value;
         const analysis = document.getElementById("analysisMode").value === "true";
         const numT = parseInt(document.getElementById("numTraitors").value, 10) || 3;
+        const christmasMode = document.getElementById("christmasMode").checked;
 
         S.rng = mulberry32(Math.floor(Math.random() * 1e9));
         S.youId = you;
         S.difficulty = diff;
         S.analysis = analysis;
         S.numTraitors = numT;
+        S.christmasMode = christmasMode;
 
         startModal.classList.remove("open");
         startGame();
