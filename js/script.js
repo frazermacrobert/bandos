@@ -897,7 +897,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     // --- Image Preloading ---
     const imageUrls = [
-      'assets/cyberteurs.png',
+      'assets/bandosicon.png',
       'assets/favicon.png',
       'assets/bg_office.jpg',
       'assets/bg_xmas.jpg',
