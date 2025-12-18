@@ -13,6 +13,32 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<!-- Tutorial Overlays -->
+<div id="tutorialOverlay1" class="tutorial-overlay" style="display:none;">
+  <div class="tutorial-popup">
+    <h3>Round 1 Tutorial</h3>
+    <p>Click the scenario answer that shows 'good lad' behaviour, and press the submit button.</p>
+    <button id="tutorialBtn1" class="btn">OK</button>
+  </div>
+</div>
+
+<div id="tutorialOverlay2" class="tutorial-overlay" style="display:none;">
+  <div class="tutorial-popup">
+    <h3>Review Actions</h3>
+    <p>Scroll down (on mobile) to view what the other players did... then click on the image of the player you want to vote out for being a shit lad/traitor.</p>
+    <div class="scroll-arrow" id="scrollArrow">↓</div>
+    <button id="tutorialBtn2" class="btn">OK</button>
+  </div>
+</div>
+
+<div id="tutorialOverlay3" class="tutorial-overlay" style="display:none;">
+  <div class="tutorial-popup">
+    <h3>Game Complete!</h3>
+    <p>And that's it! Check which player(s) get voted out or taken out by checking the game log or viewing the game bar. Make sure the traitors don't have the majority.</p>
+    <button id="tutorialBtn3" class="btn">OK</button>
+  </div>
+</div>
+
 <div class="app">
   <div class="header">
     <div>
@@ -73,7 +99,7 @@
   <div class="dialog">
     <h2>About Christmas Nandos Traitors</h2>
       <p>
-        Each round, you’ll face a Christmas Nandos scenario about being a good mate.<br>
+        Each round, you'll face a Christmas Nandos scenario about being a good mate.<br>
         1️⃣ <strong>Pick the good lad behaviour</strong> — avoid being a dickhead.<br>
         2️⃣ Shit lad behaviour means instant <strong>elimination</strong>.<br>
         3️⃣ Choose well to see what everyone else did that round.<br>
@@ -116,6 +142,13 @@
         </select>
         <div class="note">Turn this on to help you learn.</div>
       </label>
+      <label>Tutorial Mode<br>
+        <select id="tutorialMode">
+          <option value="true" selected>On</option>
+          <option value="false">Off</option>
+        </select>
+        <div class="note">Enable first-round tutorial tips.</div>
+      </label>
     </div>
     <hr>
     <div class="row">
@@ -137,7 +170,7 @@
     <h2>How to Play</h2>
     <div class="instructions">
       <p>
-       Each round, you’ll face a Christmas Nandos scenario about being a good mate.<br>
+       Each round, you'll face a Christmas Nandos scenario about being a good mate.<br>
         1️⃣ <strong>Pick the good lad behaviour</strong> — avoid being a dickhead.<br>
         2️⃣ Shit lad behaviour means instant <strong>elimination</strong>.<br>
         3️⃣ Choose well to see what everyone else did that round.<br>
