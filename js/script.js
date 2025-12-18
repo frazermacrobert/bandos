@@ -903,7 +903,9 @@ function showTutorial(step){
   if(!overlay || !btn) return;
 
   document.body.classList.add("tutorial-active");
-  overlay.style.display="flex";
+  overlay.classList.add("open");
+  overlay.style.zIndex = "3500";
+
 
   // Special handling for step 2 mobile arrow
   if(step===2){
@@ -914,7 +916,7 @@ function showTutorial(step){
 
   btn.onclick=()=>{
     document.body.classList.remove("tutorial-active");
-    overlay.style.display="none";
+    overlay.classList.remove("open");
     S.tutorialStep=step; // Update step *after* completion
   };
 }
