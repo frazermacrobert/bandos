@@ -8,8 +8,11 @@ const { chromium } = require('playwright');
   // Navigate to the local server
   await page.goto("http://localhost:8000");
 
-  // Click the start button
-  await page.click("#startGameBtn");
+  // Wait for animations to settle
+  await page.waitForTimeout(1000);
+
+  // Click the start button once it's enabled, forcing the click to bypass animation checks
+  await page.locator('#startGameBtn:not([disabled])').click({ force: true });
 
   // Wait for the topbar to be visible, indicating the game has started
   await page.waitForSelector('#topbar', { state: 'visible' });

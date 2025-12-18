@@ -404,7 +404,7 @@ function doScenarioPhase(){
   if(!submitBtn) return;
 
   if(S.tutorialEnabled && S.round===1 && S.tutorialStep===0){
-    showTutorial1();
+    showTutorial(1);
   }
 
   submitBtn.onclick=()=>{
@@ -568,7 +568,7 @@ function doActionsPhase(){
   `;
 
   if(S.tutorialEnabled && S.round===1 && S.tutorialStep===1){
-    showTutorial2();
+    showTutorial(2);
   }
 
   doVotingPhase();
@@ -729,7 +729,7 @@ function handlePlayerVote(targetId){
     logLine(`Eliminated: ${nameOf(eliminated)} (${isTraitor ? "Traitor" : "Innocent"}).`);
 
     if(S.tutorialEnabled && S.round===1 && S.tutorialStep===2){
-      setTimeout(()=>showTutorial3(),800);
+      setTimeout(()=>showTutorial(3),800);
     }
 
     // Night strike if wrong elimination
@@ -897,41 +897,25 @@ function revealTraitors(){
   });
 }
 
-// Tutorial helpers with guards
-function showTutorial1(){
-  const overlay=document.getElementById("tutorialOverlay1");
-  const btn=document.getElementById("tutorialBtn1");
-  if(!overlay || !btn) return;
-  overlay.style.display="flex";
-  btn.onclick=()=>{
-    overlay.style.display="none";
-    S.tutorialStep=1;
-  };
-}
-function showTutorial2(){
-  const overlay=document.getElementById("tutorialOverlay2");
-  const btn=document.getElementById("tutorialBtn2");
+function showTutorial(step){
+  const overlay=document.getElementById(`tutorialOverlay${step}`);
+  const btn=document.getElementById(`tutorialBtn${step}`);
   if(!overlay || !btn) return;
 
+  document.body.classList.add("tutorial-active");
   overlay.style.display="flex";
 
-  const isMobile=window.innerWidth<=640;
-  const arrow=document.getElementById("scrollArrow");
-  if(!isMobile && arrow) arrow.style.display="none";
+  // Special handling for step 2 mobile arrow
+  if(step===2){
+    const isMobile=window.innerWidth<=640;
+    const arrow=document.getElementById("scrollArrow");
+    if(!isMobile && arrow) arrow.style.display="none";
+  }
 
   btn.onclick=()=>{
+    document.body.classList.remove("tutorial-active");
     overlay.style.display="none";
-    S.tutorialStep=2;
-  };
-}
-function showTutorial3(){
-  const overlay=document.getElementById("tutorialOverlay3");
-  const btn=document.getElementById("tutorialBtn3");
-  if(!overlay || !btn) return;
-  overlay.style.display="flex";
-  btn.onclick=()=>{
-    overlay.style.display="none";
-    S.tutorialStep=3;
+    S.tutorialStep=step; // Update step *after* completion
   };
 }
 

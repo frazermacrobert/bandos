@@ -992,6 +992,12 @@ hr{
   color:var(--ink);
   font-size: 16
 
+body.tutorial-active .app {
+  pointer-events: none;
+  filter: blur(4px) saturate(0.8) brightness(0.9);
+  transition: filter 0.3s ease;
+}
+
 /* ---------- Tutorial overlays ---------- */
 .tutorial-overlay{
   position: fixed;
