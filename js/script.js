@@ -404,7 +404,11 @@ function doScenarioPhase(){
   if(!submitBtn) return;
 
   if(S.tutorialEnabled && S.round===1 && S.tutorialStep===0){
-    showTutorial(1);
+    showTutorial({
+      step: 1,
+      title: 'Round 1 Tutorial',
+      content: "Click the scenario answer that shows 'good lad' behaviour, and press the submit button."
+    });
   }
 
   submitBtn.onclick=()=>{
@@ -568,7 +572,16 @@ function doActionsPhase(){
   `;
 
   if(S.tutorialEnabled && S.round===1 && S.tutorialStep===1){
-    showTutorial(2);
+    const isMobile = window.innerWidth <= 640;
+    const scrollInstruction = isMobile
+      ? "Scroll down to view what the other players did"
+      : "Review the actions on the right";
+
+    showTutorial({
+      step: 2,
+      title: 'Review Actions',
+      content: `${scrollInstruction}... then click on the image of the player you want to vote out for being a shit lad/traitor.`
+    });
   }
 
   doVotingPhase();
@@ -729,7 +742,11 @@ function handlePlayerVote(targetId){
     logLine(`Eliminated: ${nameOf(eliminated)} (${isTraitor ? "Traitor" : "Innocent"}).`);
 
     if(S.tutorialEnabled && S.round===1 && S.tutorialStep===2){
-      setTimeout(()=>showTutorial(3),800);
+      setTimeout(() => showTutorial({
+        step: 3,
+        title: 'Game Complete!',
+        content: "And that's it! Check which player(s) get voted out or taken out by checking the game log or viewing the game bar. Make sure the traitors don't have the majority."
+      }), 800);
     }
 
     // Night strike if wrong elimination
@@ -897,25 +914,27 @@ function revealTraitors(){
   });
 }
 
-function showTutorial(step){
-  const overlay=document.getElementById(`tutorialOverlay${step}`);
-  const btn=document.getElementById(`tutorialBtn${step}`);
-  if(!overlay || !btn) return;
+function showTutorial({ step, title, content }){
+  const modal = document.getElementById('tutorialModal');
+  const titleEl = document.getElementById('tutorialTitle');
+  const bodyEl = document.getElementById('tutorialBody');
+  const okBtn = document.getElementById('tutorialBtn');
 
-  document.body.classList.add("tutorial-active");
-  overlay.style.display="flex";
-
-  // Special handling for step 2 mobile arrow
-  if(step===2){
-    const isMobile=window.innerWidth<=640;
-    const arrow=document.getElementById("scrollArrow");
-    if(!isMobile && arrow) arrow.style.display="none";
+  if (!modal || !titleEl || !bodyEl || !okBtn) {
+    console.error('Tutorial modal elements not found');
+    return;
   }
 
-  btn.onclick=()=>{
-    document.body.classList.remove("tutorial-active");
-    overlay.style.display="none";
-    S.tutorialStep=step; // Update step *after* completion
+  titleEl.textContent = title;
+  bodyEl.innerHTML = `<p>${content}</p>`; // Use innerHTML to allow for simple HTML like <br>
+
+  document.body.classList.add('tutorial-active');
+  modal.classList.add('open');
+
+  okBtn.onclick = () => {
+    document.body.classList.remove('tutorial-active');
+    modal.classList.remove('open');
+    S.tutorialStep = step; // Mark this step as completed
   };
 }
 

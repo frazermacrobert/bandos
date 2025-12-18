@@ -13,29 +13,14 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<!-- Tutorial Overlays -->
-<div id="tutorialOverlay1" class="tutorial-overlay" style="display:none;">
-  <div class="tutorial-popup">
-    <h3>Round 1 Tutorial</h3>
-    <p>Click the scenario answer that shows 'good lad' behaviour, and press the submit button.</p>
-    <button id="tutorialBtn1" class="btn">OK</button>
-  </div>
-</div>
-
-<div id="tutorialOverlay2" class="tutorial-overlay" style="display:none;">
-  <div class="tutorial-popup">
-    <h3>Review Actions</h3>
-    <p>Scroll down (on mobile) to view what the other players did... then click on the image of the player you want to vote out for being a shit lad/traitor.</p>
-    <div class="scroll-arrow" id="scrollArrow">↓</div>
-    <button id="tutorialBtn2" class="btn">OK</button>
-  </div>
-</div>
-
-<div id="tutorialOverlay3" class="tutorial-overlay" style="display:none;">
-  <div class="tutorial-popup">
-    <h3>Game Complete!</h3>
-    <p>And that's it! Check which player(s) get voted out or taken out by checking the game log or viewing the game bar. Make sure the traitors don't have the majority.</p>
-    <button id="tutorialBtn3" class="btn">OK</button>
+<!-- Tutorial Modal -->
+<div class="modal" id="tutorialModal" role="dialog" aria-modal="true" aria-labelledby="tutorialTitle">
+  <div class="dialog">
+    <h2 id="tutorialTitle"></h2>
+    <div id="tutorialBody"></div>
+    <div class="footer">
+      <button id="tutorialBtn" class="btn">OK</button>
+    </div>
   </div>
 </div>
 
