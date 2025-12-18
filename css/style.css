@@ -10,7 +10,6 @@
   --bg-a:#f9f2ec;
   --bg-b:#f6e7dc;
   --bg-c:#f1d7c7;
-
   --safe-top: env(safe-area-inset-top);
   --safe-bottom: env(safe-area-inset-bottom);
   --safe-left: env(safe-area-inset-left);
@@ -54,7 +53,6 @@ body.christmas-mode[data-game-ready='true']{
   background-image: url('../assets/bg_xmas.jpg');
 }
 
-/* ---------- App layout ---------- */
 .app{
   max-width:1200px;
   margin:0 auto;
@@ -90,7 +88,6 @@ body.christmas-mode[data-game-ready='true']{
   white-space: nowrap;
 }
 
-/* ---------- Buttons ---------- */
 .btn{
   appearance:none;
   border:0;
@@ -134,7 +131,6 @@ body.christmas-mode[data-game-ready='true']{
   }
 }
 
-/* ---------- Topbar ---------- */
 .topbar{
   position:sticky;
   top: var(--safe-top, 0);
@@ -186,7 +182,6 @@ body.christmas-mode[data-game-ready='true']{
   }
 }
 
-/* ---------- Player Cards ---------- */
 .player-card{
   flex: 0 0 90px;
   position:relative;
@@ -329,7 +324,6 @@ body.christmas-mode[data-game-ready='true']{
   .xmark{ font-size: 36px; }
 }
 
-/* ---------- Main grid ---------- */
 .grid{
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -375,7 +369,6 @@ body.christmas-mode[data-game-ready='true']{
   }
 }
 
-/* ---------- Options & Radio Inputs ---------- */
 .option{
   display:block;
   margin:10px 0;
@@ -423,7 +416,6 @@ body.christmas-mode[data-game-ready='true']{
   }
 }
 
-/* ---------- Actions List ---------- */
 .actions-list{ display:grid; gap:10px; }
 
 .action-item{
@@ -484,7 +476,6 @@ body.christmas-mode[data-game-ready='true']{
   box-shadow: 0 2px 6px rgba(0,0,0,.1);
 }
 
-/* ---------- Modals ---------- */
 .modal{
   position:fixed;
   inset:0;
@@ -533,7 +524,6 @@ body.christmas-mode[data-game-ready='true']{
   }
 }
 
-/* Start modal dialog override */
 #startModal .dialog{
   background: transparent;
   box-shadow: none;
@@ -541,8 +531,6 @@ body.christmas-mode[data-game-ready='true']{
   max-width: 500px;
 }
 
-/* ---------- Start screen logo: smaller + alive ---------- */
-/* Key change: use explicit width instead of max-width:100% */
 .main-logo{
   width: clamp(140px, 22vw, 240px);
   height: auto;
@@ -555,8 +543,6 @@ body.christmas-mode[data-game-ready='true']{
   position: relative;
 }
 
-/* Optional candy “glint” sweep using a pseudo element wrapper effect
-   Works best if the image has transparency and no baked background. */
 .main-menu{
   display: flex;
   flex-direction: column;
@@ -578,13 +564,11 @@ body.christmas-mode[data-game-ready='true']{
   opacity: 0.0;
 }
 
-/* Float + subtle pulse */
 @keyframes logo-float{
   0%, 100% { transform: translateY(0) scale(1); }
   50% { transform: translateY(-8px) scale(1.02); }
 }
 
-/* Extra micro “breath” on hover or tap */
 .main-logo:hover{
   animation-duration: 2.8s;
   transform: translateY(-10px) scale(1.04);
@@ -597,7 +581,6 @@ body.christmas-mode[data-game-ready='true']{
   }
 }
 
-/* Reduced motion support */
 @media (prefers-reduced-motion: reduce){
   .main-logo{ animation: none; }
   .btn-main{ animation: none; }
@@ -778,7 +761,6 @@ body.christmas-mode[data-game-ready='true']{
   }
 }
 
-/* Dialog */
 .dialog{
   background:#fff;
   color:var(--ink);
@@ -812,7 +794,6 @@ body.christmas-mode[data-game-ready='true']{
   }
 }
 
-/* ---------- Start-screen background image ---------- */
 .start-bg{
   position: fixed;
   inset: 0;
@@ -844,7 +825,6 @@ hr{
   50% { transform: scale(1.05); }
 }
 
-/* Explain overlay */
 .explain-overlay{
   position: fixed;
   inset:0;
@@ -935,7 +915,6 @@ hr{
   80% { transform: translateX(6px); }
 }
 
-/* Onboarding box */
 .instructions{
   background: rgba(255,255,255,0.75);
   border: 1px solid var(--rail);
@@ -1011,140 +990,4 @@ hr{
 .round-title .round-num{
   font-weight:800;
   color:var(--ink);
-  font-size: 16px;
-}
-
-.round-pulse{ animation: roundPulse .6s ease; }
-.round-num-flash{ animation: numFlash .9s ease; }
-
-@keyframes roundPulse{
-  0%{transform:scale(1);color:var(--muted)}
-  40%{transform:scale(1.15);color:var(--red)}
-  100%{transform:scale(1);color:var(--muted)}
-}
-
-@keyframes numFlash{
-  0%{color:var(--red);transform:translateY(-2px)}
-  100%{color:var(--ink);transform:translateY(0)}
-}
-
-/* ---------- End Game Modal ---------- */
-.end-game-modal{
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  padding: 24px;
-}
-
-.end-game-modal .avatars{
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.end-game-modal .avatars img{
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid var(--rail);
-  box-shadow: 0 6px 16px rgba(0,0,0,.12);
-  transition: transform 0.3s ease;
-}
-
-.end-game-modal .avatars img:hover{ transform: scale(1.05); }
-
-.end-game-modal .message{ flex: 1; }
-
-.end-game-modal .message h3{
-  margin-top: 0;
-  margin-bottom: 8px;
-  font-size: 17px;
-  color: var(--muted);
-  font-weight: 600;
-}
-
-.end-game-modal .message p{
-  font-size: 18px;
-  font-style: italic;
-  color: var(--ink);
-  margin: 10px 0 16px;
-  line-height: 1.6;
-}
-
-@media (max-width: 640px){
-  .end-game-modal{
-    flex-direction: column;
-    text-align: center;
-    padding: 20px 16px;
-    gap: 20px;
-  }
-
-  .end-game-modal .avatars{
-    flex-direction: row;
-    justify-content: center;
-    gap: 16px;
-  }
-
-  .end-game-modal .avatars img{
-    width: 90px;
-    height: 90px;
-  }
-
-  .end-game-modal .message h3{ font-size: 16px; }
-  .end-game-modal .message p{ font-size: 16px; }
-}
-
-/* Scenario actions layout */
-.scenario-actions{
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 12px;
-  align-items: center;
-  margin-top: 20px;
-}
-
-#openLogBtn{ justify-self: start; }
-#restartBtn{ justify-self: center; }
-#answerBtn{ justify-self: end; }
-
-@media (max-width: 640px){
-  .scenario-actions{
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  #openLogBtn, #restartBtn, #answerBtn{
-    justify-self: stretch;
-    width: 100%;
-  }
-}
-
-@media (max-width: 640px){
-  select, input[type="checkbox"]{ min-height: 44px; }
-
-  .dialog h2{
-    font-size: 20px;
-    margin-bottom: 16px;
-  }
-
-  .footer{ margin-top: 20px; }
-
-  .footer .btn{ width: 100%; }
-}
-
-#loading-indicator{
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-
-button:focus-visible,
-select:focus-visible,
-input:focus-visible{
-  outline: 3px solid var(--red);
-  outline-offset: 2px;
-}
-
-a, button, .btn, .player-card, .option, .action-item{
-  -webkit-tap-highlight-color: transparent;
-}
+  font-size: 16
