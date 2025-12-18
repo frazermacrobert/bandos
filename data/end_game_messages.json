@@ -1,43 +1,43 @@
 [
   {
     "id": "michael",
-    "win": "Only Holyrood's third best fighter could keep the night on track. Absolute legend",
-    "lose": "Wee baws McGraw. That's right. Wee baws. Try harder."
+    "win": "Nice, you must be Holyrood's second best fighter to have pulled that off.",
+    "lose": "You are wee baws McGraw. That's right. Wee baws. Try harder."
   },
   {
     "id": "stefan",
-    "win": "Everyone always knew you were the glue that held everything together.",
+    "win": "And I thought I was the glue that held everything together. Fine.",
     "lose": "You just said 'meh' to this whole experience, didn't you? Poor effort. Fine."
   },
   {
     "id": "gerry",
-    "win": "Paint inspector, mate inspector. Same-same, you've kept a bunch of arseholes honest.",
-    "lose": "Oh no, looks like we've triggered wee Gerry. Here comes trouble."
+    "win": "You've kept a bunch of wee arseholes honest. Fuckin' get in.",
+    "lose": "Nice one, Dickhead."
   },
   {
     "id": "ally",
-    "win": "With all those qualifications, this was clearly a walk in the park.",
-    "lose": "Tell us what you really think Ally. What's the story with the traitors? And why haven't you given a fuck."
+    "win": "What's the story with you being good at shit all of a sudden, pal?",
+    "lose": "Shambles. Absolute shambles."
   },
   {
     "id": "chuckie",
     "win": "That's right. You're the real Da of the group. Proper Da skills.",
-    "lose": "Giving a notorious lightweight decisions was a terrible idea... better luck next time”"
+    "lose": "Imagine being bested by a notorious lightweight. That's embarrassing.”"
   },
   {
     "id": "elliot",
     "win": "Piece of piss. You're a seasoned top lad.",
-    "lose": "Silver-tongued wanker, this was not your finest hour."
+    "lose": "Looks like this silver-tongue charmed another victim."
   },
   {
     "id": "chris",
-    "win": "You're not a Rangers fan, you're not a Celtic fan, and for once that makes you automatically a winner. Nice.",
-    "lose": "Pizza bed always felt more important to you... but it's proved poor form this time."
+    "win": "Well, it could be worse. You could be a dirty little Tory.",
+    "lose": "Just go get a pizza bed and you'll forget this ever happened."
   },
   {
     "id": "gavin",
-    "win": "Well done, you won. Feels odd to hear that when you're a hun, doesn't it?",
-    "lose": "Rangers are deed. So's the queen. Go greet about it."
+    "win": "Well done, you won. Something I don't hear often as a big dutty Hun",
+    "lose": "If Rangers are deed, and so's the queen.... so are you, gutted mate."
   },
   {
     "id": "nathan",
@@ -46,17 +46,17 @@
   },
   {
     "id": "frazer",
-    "win": "Playing as the game-maker and winning is narcissistic on too many levels. Hollow victory. Go socialise.",
-    "lose": "You lost? At your own game? Well that's embarrassing..."
+    "win": "You indulged the shit out of this game. Appreciate that.",
+    "lose": "Glad I spent DAYS making this, for you not to try properly."
   },
   {
     "id": "kirky",
-    "win": "When you show up, things go right. New Zealand doesn't deserve it, time to come home.",
+    "win": "Shucks, if you're behaving like a real human I might come home now.",
     "lose": "Seems like your thinking is on the wrong time zone."
   },
   {
     "id": "andy",
-    "win": "Absolutely wild that you showed up long enough to sort everyone's shit out. Do it more.",
-    "lose": "Unpredictable. Chaotic. Unsuccessful. Inappropriate. This is either your past love life or the game results."
+    "win": "What's more wild, that you won... or that I'm still present to see it?",
+    "lose": "Unpredictable. Chaotic. Unsuccessful. Inappropriate. This is either my past love life or the game results."
   }
 ]
