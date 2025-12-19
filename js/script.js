@@ -31,11 +31,11 @@ function weightedPick(items,weights,rng){
 // Preload images with a basic progress overlay
 function preloadImages(urls){
   return new Promise((resolve)=>{
+    const resolvedUrls = new Map();
     const total=urls.length;
-    if(total===0){ resolve(); return; }
+    if(total===0){ resolve(resolvedUrls); return; }
 
-    let loadedCount=0;
-    let errorCount=0;
+    let processedCount=0;
 
     const loader=document.createElement('div');
     loader.id='loading-indicator';
@@ -54,31 +54,52 @@ function preloadImages(urls){
 
     const progressText=loader.querySelector('div');
 
-    function checkCompletion(){
-      if(loadedCount+errorCount===total){
-        if(errorCount>0){
-          console.warn(`Preloading finished with ${errorCount} image errors.`);
-        }
+    function updateProgress(){
+      progressText.textContent=`Loading assets (${processedCount} / ${total})`;
+      if(processedCount===total){
         setTimeout(()=>{
           if(loader.parentNode) loader.parentNode.removeChild(loader);
-          resolve();
+          resolve(resolvedUrls);
         },150);
       }
     }
 
-    urls.forEach(url=>{
-      const img=new Image();
-      img.onload=()=>{
-        loadedCount++;
-        progressText.textContent=`Loading assets (${loadedCount} / ${total})`;
-        checkCompletion();
+    urls.forEach(urlInfo=>{
+      const primaryUrl = Array.isArray(urlInfo) ? urlInfo[0] : urlInfo;
+      const fallbackUrl = Array.isArray(urlInfo) ? urlInfo[1] : null;
+
+      const primaryImage = new Image();
+      primaryImage.onload = () => {
+        resolvedUrls.set(primaryUrl, primaryUrl);
+        processedCount++;
+        updateProgress();
       };
-      img.onerror=()=>{
-        errorCount++;
-        console.warn(`Failed to load image: ${url}`);
-        checkCompletion();
+
+      primaryImage.onerror = () => {
+        if (fallbackUrl) {
+          console.warn(`Failed to load image: ${primaryUrl}. Trying fallback ${fallbackUrl}.`);
+          const fallbackImage = new Image();
+          fallbackImage.onload = () => {
+            resolvedUrls.set(primaryUrl, fallbackUrl);
+            processedCount++;
+            updateProgress();
+          };
+          fallbackImage.onerror = () => {
+            console.warn(`Failed to load fallback image: ${fallbackUrl}.`);
+            resolvedUrls.set(primaryUrl, primaryUrl);
+            processedCount++;
+            updateProgress();
+          };
+          fallbackImage.src = fallbackUrl;
+        } else {
+          console.warn(`Failed to load image: ${primaryUrl}.`);
+          resolvedUrls.set(primaryUrl, primaryUrl);
+          processedCount++;
+          updateProgress();
+        }
       };
-      img.src=url;
+
+      primaryImage.src = primaryUrl;
     });
   });
 }
@@ -171,7 +192,8 @@ const S={
   christmasMode:false,
   tutorialEnabled:true,
   tutorialStep:0,
-  currentScenario:null
+  currentScenario:null,
+  resolvedImageUrls: new Map()
 };
 
 async function loadData(){
@@ -280,8 +302,14 @@ function startGame(){
   const roster=[you,...others];
 
   S.players=roster.map(e=>{
-    const avatarName=S.christmasMode?`${e.id}_xmas`:e.id;
-    const goneAvatarName=S.christmasMode?`${e.id}_xmas_gone`:`${e.id}_gone`;
+    const avatarName = S.christmasMode ? `${e.id}_xmas` : e.id;
+    const avatarPath = `assets/pngs/${avatarName}.png`;
+
+    const goneAvatarName = `${e.id}_gone`;
+    const goneAvatarPath = `assets/gone/${goneAvatarName}.png`;
+
+    const xmasGoneAvatarName = `${e.id}_xmas_gone`;
+    const xmasGoneAvatarPath = `assets/gone/${xmasGoneAvatarName}.png`;
 
     return {
       id:e.id,
@@ -291,8 +319,10 @@ function startGame(){
       behaviour:defaultBehaviour(e.department),
       role:"Innocent",
       status:"Alive",
-      avatar:`assets/pngs/${avatarName}.png`,
-      avatarGone:`assets/gone/${goneAvatarName}.png`,
+      avatar: S.resolvedImageUrls.get(avatarPath) || avatarPath,
+      avatarGone: S.christmasMode
+        ? (S.resolvedImageUrls.get(xmasGoneAvatarPath) || goneAvatarPath)
+        : (S.resolvedImageUrls.get(goneAvatarPath) || goneAvatarPath),
       avatarTraitor:`assets/pngs/traitor-revealed.png`
     };
   });
@@ -939,7 +969,7 @@ window.addEventListener("DOMContentLoaded",async()=>{
   await loadData();
 
   // Build image URL list for preload
-  const imageUrls=[
+  const imageUrlsToPreload = [
     'assets/cyberteurs.png',
     'assets/favicon.png',
     'assets/bg_office.jpg',
@@ -948,15 +978,20 @@ window.addEventListener("DOMContentLoaded",async()=>{
     'assets/pngs/traitor-revealed.png'
   ];
 
-  S.allEmployees.forEach(e=>{
-    imageUrls.push(`assets/pngs/${e.id}.png`);
-    imageUrls.push(`assets/gone/${e.id}_gone.png`);
-    imageUrls.push(`assets/pngs/${e.id}_xmas.png`);
-    imageUrls.push(`assets/gone/${e.id}_xmas_gone.png`);
+  S.allEmployees.forEach(e => {
+    const regularAvatar = `assets/pngs/${e.id}.png`;
+    const xmasAvatar = `assets/pngs/${e.id}_xmas.png`;
+    const goneAvatar = `assets/gone/${e.id}_gone.png`;
+    const xmasGoneAvatar = `assets/gone/${e.id}_xmas_gone.png`;
+
+    imageUrlsToPreload.push(regularAvatar);
+    imageUrlsToPreload.push(xmasAvatar);
+    imageUrlsToPreload.push(goneAvatar);
+    imageUrlsToPreload.push([xmasGoneAvatar, goneAvatar]);
   });
 
-  const uniqueImageUrls=[...new Set(imageUrls)];
-  await preloadImages(uniqueImageUrls);
+  const uniqueImageUrls = [...new Set(imageUrlsToPreload.flat())];
+  S.resolvedImageUrls = await preloadImages(imageUrlsToPreload);
 
   if(startGameBtn){
     startGameBtn.textContent='Start Game';
