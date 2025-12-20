@@ -1026,3 +1026,49 @@ body.tutorial-active .app {
     border-radius: 16px;
   }
 }
+
+.end-game-modal {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.end-game-modal .avatars {
+  display: flex;
+  gap: 12px;
+}
+
+.end-game-modal .avatars img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.end-game-modal .message {
+  flex: 1;
+}
+
+.end-game-modal .message h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: var(--red);
+}
+
+.end-game-modal .message p {
+  margin: 0 0 16px;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .end-game-modal {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .end-game-modal .avatars img {
+    width: 90px;
+    height: 90px;
+  }
+}
