@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1a0a2e">
+<title>Christmas Carnage</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{
+  width:100%;height:100%;
+  overflow:hidden;
+  background:#1a0a2e;
+  touch-action:none;
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  user-select:none;
+  font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+}
+#game-canvas{
+  display:block;
+  width:100%;height:100%;
+  position:fixed;top:0;left:0;
+}
+#ui-layer{
+  position:fixed;top:0;left:0;
+  width:100%;height:100%;
+  pointer-events:none;
+  z-index:10;
+}
+#ui-layer>*{pointer-events:auto}
+.screen.hidden{pointer-events:none!important}
+
+/* TITLE SCREEN */
+.screen{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  transition:opacity 0.4s ease,transform 0.4s ease;
+}
+.screen.hidden{opacity:0;pointer-events:none;transform:scale(0.95)}
+
+#title-screen{background:radial-gradient(ellipse at 50% 30%,#2d1b4e 0%,#1a0a2e 70%)}
+#title-screen h1{
+  font-size:clamp(2rem,8vw,4rem);
+  color:#ff4444;
+  text-shadow:0 0 30px rgba(255,68,68,0.5),0 4px 0 #aa0000;
+  letter-spacing:-0.02em;
+  font-weight:900;
+  margin-bottom:0.1em;
+}
+#title-screen .subtitle{
+  font-size:clamp(0.8rem,3vw,1.2rem);
+  color:rgba(255,255,255,0.5);
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  margin-bottom:2em;
+}
+.tap-prompt{
+  font-size:clamp(0.9rem,3.5vw,1.1rem);
+  color:rgba(255,255,255,0.7);
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:0.4}50%{opacity:1}}
+
+/* CHARACTER SELECT */
+#select-screen{background:rgba(26,10,46,0.97)}
+#select-screen .heading{
+  font-size:clamp(1rem,4vw,1.4rem);
+  color:rgba(255,255,255,0.6);
+  text-transform:uppercase;
+  letter-spacing:0.2em;
+  margin-bottom:1em;
+}
+.char-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:clamp(6px,2vw,12px);
+  padding:0 16px;
+  max-width:400px;
+  width:100%;
+}
+.char-cell{
+  position:relative;
+  aspect-ratio:1;
+  border-radius:16px;
+  overflow:hidden;
+  background:rgba(255,255,255,0.08);
+  overflow:hidden;
+  border:3px solid transparent;
+  transition:transform 0.2s ease,border-color 0.2s ease,box-shadow 0.2s ease;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.char-cell img{
+  width:100%;height:100%;
+  object-fit:cover;
+  pointer-events:none;
+}
+.char-cell .char-name{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:2px 0;
+  text-align:center;
+  font-size:clamp(0.5rem,2.2vw,0.7rem);
+  font-weight:700;
+  color:#fff;
+  background:linear-gradient(transparent,rgba(0,0,0,0.7));
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+}
+.char-cell:active{transform:scale(0.92)}
+.char-cell.selected{
+  border-color:#ff4444;
+  box-shadow:0 0 20px rgba(255,68,68,0.4);
+  transform:scale(1.05);
+}
+
+/* HUD */
+#hud{
+  position:absolute;top:0;left:0;right:0;
+  padding:max(env(safe-area-inset-top),8px) 16px 0;
+  display:flex;justify-content:space-between;align-items:flex-start;
+  pointer-events:none;
+  opacity:0;transition:opacity 0.3s ease;
+}
+#hud.visible{opacity:1}
+.hud-item{
+  font-size:clamp(0.7rem,2.8vw,0.9rem);
+  font-weight:700;color:#fff;
+  text-shadow:0 2px 4px rgba(0,0,0,0.5);
+}
+.hud-score{font-variant-numeric:tabular-nums;font-size:clamp(1.2rem,5vw,1.8rem)}
+.hud-wave{opacity:0.7;font-size:clamp(0.65rem,2.5vw,0.8rem);text-transform:uppercase;letter-spacing:0.15em}
+.hp-bar-wrap{
+  position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:clamp(100px,30vw,160px);
+  margin-top:max(env(safe-area-inset-top),8px);
+}
+.hp-bar{
+  height:6px;border-radius:3px;
+  background:rgba(255,255,255,0.15);
+  overflow:hidden;
+}
+.hp-bar-fill{
+  height:100%;border-radius:3px;
+  background:linear-gradient(90deg,#ff4444,#ff6b6b);
+  transition:width 0.3s ease;
+  box-shadow:0 0 8px rgba(255,68,68,0.5);
+}
+
+/* WAVE COMPLETE / UPGRADE PICK */
+#upgrade-screen{background:rgba(26,10,46,0.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+#upgrade-screen .heading{
+  font-size:clamp(0.8rem,3vw,1rem);
+  color:rgba(255,255,255,0.5);
+  text-transform:uppercase;letter-spacing:0.2em;
+  margin-bottom:clamp(12px,3vh,24px);
+}
+.upgrade-cards{
+  display:flex;gap:clamp(8px,2vw,16px);
+  padding:0 16px;
+  max-width:400px;width:100%;
+}
+.upgrade-card{
+  flex:1;
+  background:rgba(255,255,255,0.08);
+  border:2px solid rgba(255,255,255,0.1);
+  border-radius:16px;
+  padding:clamp(12px,3vw,20px) clamp(8px,2vw,12px);
+  text-align:center;
+  cursor:pointer;
+  transition:transform 0.2s ease,border-color 0.2s ease,background 0.2s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.upgrade-card:active{transform:scale(0.95)}
+.upgrade-card:hover{border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.12)}
+.upgrade-icon{font-size:clamp(1.5rem,6vw,2.5rem);margin-bottom:8px}
+.upgrade-label{
+  font-size:clamp(0.6rem,2.2vw,0.75rem);
+  color:rgba(255,255,255,0.8);
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+}
+.upgrade-desc{
+  font-size:clamp(0.5rem,1.8vw,0.6rem);
+  color:rgba(255,255,255,0.4);
+  margin-top:4px;
+}
+
+/* GAME OVER */
+#gameover-screen{background:rgba(26,10,46,0.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.go-score{
+  font-size:clamp(3rem,12vw,5rem);
+  font-weight:900;color:#fff;
+  font-variant-numeric:tabular-nums;
+  text-shadow:0 0 40px rgba(255,68,68,0.3);
+}
+.go-label{
+  font-size:clamp(0.7rem,2.5vw,0.9rem);
+  color:rgba(255,255,255,0.4);
+  text-transform:uppercase;letter-spacing:0.2em;
+  margin-bottom:0.5em;
+}
+.go-roast{
+  font-size:clamp(0.85rem,3vw,1.1rem);
+  color:rgba(255,255,255,0.7);
+  max-width:300px;text-align:center;
+  margin:1em 0 1.5em;
+  line-height:1.4;
+}
+.go-killer{
+  font-size:clamp(0.65rem,2.2vw,0.8rem);
+  color:rgba(255,68,68,0.8);
+  margin-bottom:1.5em;
+}
+.btn{
+  padding:clamp(12px,3vw,16px) clamp(32px,8vw,48px);
+  border:none;border-radius:50px;
+  background:#ff4444;
+  color:#fff;
+  font-size:clamp(0.9rem,3.5vw,1.1rem);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  cursor:pointer;
+  transition:transform 0.15s ease;
+  -webkit-tap-highlight-color:transparent;
+  box-shadow:0 4px 20px rgba(255,68,68,0.4);
+}
+.btn:active{transform:scale(0.95)}
+
+/* WAVE ANNOUNCE */
+.wave-announce{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  font-size:clamp(1.5rem,6vw,2.5rem);
+  font-weight:900;color:#fff;
+  text-shadow:0 0 30px rgba(255,68,68,0.5);
+  opacity:0;
+  pointer-events:none;
+  white-space:nowrap;
+}
+</style>
+</head>
+<body>
+<canvas id="game-canvas"></canvas>
+<div id="ui-layer">
+
+  <div id="title-screen" class="screen">
+    <h1>CHRISTMAS<br>CARNAGE</h1>
+    <div class="subtitle">The Lads</div>
+    <div class="tap-prompt">Tap to play</div>
+  </div>
+  <script>document.getElementById('title-screen').addEventListener('click',function(){if(typeof window._onTitleTap==='function')window._onTitleTap()})</script>
+
+  <div id="select-screen" class="screen hidden">
+    <div class="heading">Pick yourself</div>
+    <div class="char-grid" id="char-grid"></div>
+  </div>
+
+  <div id="hud">
+    <div class="hud-item hud-wave" id="hud-wave">WAVE 1</div>
+    <div class="hp-bar-wrap">
+      <div class="hp-bar"><div class="hp-bar-fill" id="hp-fill" style="width:100%"></div></div>
+    </div>
+    <div class="hud-item hud-score" id="hud-score">0</div>
+  </div>
+
+  <div id="upgrade-screen" class="screen hidden">
+    <div class="heading">Pick an upgrade</div>
+    <div class="upgrade-cards" id="upgrade-cards"></div>
+  </div>
+
+  <div id="gameover-screen" class="screen hidden">
+    <div class="go-label">Score</div>
+    <div class="go-score" id="go-score">0</div>
+    <div class="go-killer" id="go-killer"></div>
+    <div class="go-roast" id="go-roast"></div>
+    <button class="btn" id="btn-retry">Again</button>
+  </div>
+
+  <div class="wave-announce" id="wave-announce"></div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
